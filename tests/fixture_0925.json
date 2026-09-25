@@ -1,0 +1,15 @@
+{
+  "selected": [
+    {"text": "The United States Congress passes twelve constitutional amendments, ten of which later become the Bill of Rights.", "year": 1789,
+     "pages": [{"title": "United_States_Bill_of_Rights", "titles": {"normalized": "United States Bill of Rights"}, "extract": "The Bill of Rights comprises the first ten amendments...",
+       "content_urls": {"desktop": {"page": "https://en.wikipedia.org/wiki/United_States_Bill_of_Rights"}},
+       "thumbnail": {"source": "https://upload.wikimedia.org/example.jpg"}}]},
+    {"text": "Vasco Núñez de Balboa becomes the first European to see the Pacific Ocean.", "year": 1513, "pages": []},
+    {"text": "   ", "year": 2000},
+    "garbage"
+  ],
+  "births": [{"text": "William Faulkner, American novelist", "year": 1897, "pages": [{"title": "William_Faulkner"}]}],
+  "deaths": [{"text": "Johann Strauss I, Austrian composer", "year": 1849}],
+  "holidays": [{"text": "Independence Day (Mozambique)", "pages": []}],
+  "events": [{"text": "Emperor Justinian I dies.", "year": -1}]
+}
