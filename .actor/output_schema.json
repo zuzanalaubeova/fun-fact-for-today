@@ -1,0 +1,16 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Fun Fact for Today output",
+    "properties": {
+        "funFacts": {
+            "type": "string",
+            "title": "Fun facts",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+        },
+        "funFactOfTheDay": {
+            "type": "string",
+            "title": "Top fun fact (JSON)",
+            "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/FUN_FACT"
+        }
+    }
+}

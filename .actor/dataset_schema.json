@@ -1,0 +1,39 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "date": {"type": "string", "description": "Month and day (MM-DD)."},
+            "type": {"type": "string", "enum": ["selected", "events", "births", "deaths", "holidays"]},
+            "year": {"type": ["integer", "null"], "description": "Year of the event. Negative for BC. Null for holidays."},
+            "yearsAgo": {"type": ["integer", "null"]},
+            "text": {"type": "string", "description": "Raw text from Wikipedia."},
+            "funFact": {"type": "string", "description": "Ready-to-share sentence."},
+            "wikipediaTitle": {"type": ["string", "null"]},
+            "wikipediaExtract": {"type": ["string", "null"]},
+            "wikipediaUrl": {"type": ["string", "null"]},
+            "thumbnailUrl": {"type": ["string", "null"]},
+            "language": {"type": "string"}
+        },
+        "required": ["date", "type", "text", "funFact", "language"]
+    },
+    "views": {
+        "overview": {
+            "title": "Fun facts",
+            "transformation": {
+                "fields": ["thumbnailUrl", "funFact", "year", "yearsAgo", "type", "wikipediaUrl"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "thumbnailUrl": {"label": "Image", "format": "image"},
+                    "funFact": {"label": "Fun fact", "format": "text"},
+                    "year": {"label": "Year", "format": "number"},
+                    "yearsAgo": {"label": "Years ago", "format": "number"},
+                    "type": {"label": "Type", "format": "text"},
+                    "wikipediaUrl": {"label": "Wikipedia", "format": "link"}
+                }
+            }
+        }
+    }
+}

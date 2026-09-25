@@ -1,0 +1,61 @@
+{
+    "title": "Fun Fact for Today input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "factTypes": {
+            "title": "Fact types",
+            "type": "array",
+            "description": "Which kinds of facts to include. \"Selected\" are events hand-picked by Wikipedia editors and usually the most interesting.",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enum": ["selected", "events", "births", "deaths", "holidays"],
+                "enumTitles": ["Selected highlights", "All events", "Births", "Deaths", "Holidays & observances"]
+            },
+            "default": ["selected"],
+            "prefill": ["selected"]
+        },
+        "maxFacts": {
+            "title": "Number of facts",
+            "type": "integer",
+            "description": "How many facts to return.",
+            "default": 1,
+            "prefill": 1,
+            "minimum": 1,
+            "maximum": 500
+        },
+        "randomize": {
+            "title": "Random pick",
+            "type": "boolean",
+            "description": "Pick facts randomly. When off, facts keep Wikipedia's order (newest first) and alternate between the selected types.",
+            "default": true
+        },
+        "language": {
+            "title": "Wikipedia language",
+            "type": "string",
+            "description": "Language code of the Wikipedia edition, e.g. en, de, fr, sv. Not every edition provides the \"On this day\" feed.",
+            "editor": "textfield",
+            "default": "en",
+            "prefill": "en",
+            "pattern": "^[a-z]{2,3}(-[a-z]+)?$"
+        },
+        "date": {
+            "title": "Date",
+            "type": "string",
+            "description": "Leave empty for today. Otherwise use YYYY-MM-DD or MM-DD.",
+            "editor": "textfield",
+            "pattern": "^$|^(\\d{4}-)?\\d{2}-\\d{2}$",
+            "sectionCaption": "Date settings"
+        },
+        "timezone": {
+            "title": "Timezone",
+            "type": "string",
+            "description": "IANA timezone used to decide what \"today\" is, e.g. Europe/Prague or America/New_York.",
+            "editor": "textfield",
+            "default": "UTC",
+            "prefill": "UTC"
+        }
+    },
+    "required": []
+}
